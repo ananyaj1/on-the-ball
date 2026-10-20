@@ -1,0 +1,73 @@
+.label {
+  position: relative;
+  z-index: 1;
+  display: inline-block;
+  max-width: 100%;
+}
+
+/* Split underline, effect 06: https://css-link-effects.webflow.io/ */
+.label::before,
+.label::after {
+  position: absolute;
+  top: calc(100% + 0.0625rem);
+  width: 54%;
+  height: 1px;
+  background: currentColor;
+  content: "";
+  pointer-events: none;
+  transform: scaleX(0);
+  transition: transform 0.3s cubic-bezier(0.2, 1, 0.8, 1);
+}
+
+.label::before {
+  left: -4%;
+  transform-origin: left bottom;
+}
+
+.label::after {
+  right: -4%;
+  transform-origin: right bottom;
+}
+
+.text {
+  display: inline-block;
+  max-width: 100%;
+  transition: transform 0.3s cubic-bezier(0.2, 1, 0.8, 1);
+}
+
+@media (hover: hover) {
+  :global(a):hover .text {
+    transform: translateY(-0.125rem);
+  }
+
+  :global(a):hover .label::before,
+  :global(a):hover .label::after {
+    transform: translateY(0.125rem) scaleX(1) scaleY(3);
+  }
+}
+
+:global(a):focus-visible .text {
+  transform: translateY(-0.125rem);
+}
+
+:global(a):focus-visible .label::before,
+:global(a):focus-visible .label::after {
+  transform: translateY(0.125rem) scaleX(1) scaleY(3);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .text,
+  .label::before,
+  .label::after {
+    transition: none;
+  }
+
+  :global(a):is(:hover, :focus-visible) .text {
+    transform: none;
+  }
+
+  :global(a):is(:hover, :focus-visible) .label::before,
+  :global(a):is(:hover, :focus-visible) .label::after {
+    transform: scaleX(1);
+  }
+}

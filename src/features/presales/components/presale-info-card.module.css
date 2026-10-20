@@ -1,0 +1,18 @@
+.details {
+  display: grid;
+  gap: 0.875rem;
+  margin-top: 0.75rem;
+}
+
+.location,
+.schedule {
+  font-size: 0.75rem;
+  line-height: 1.6;
+  overflow-wrap: anywhere;
+}
+
+.schedule {
+  display: grid;
+  gap: 0.125rem;
+  font-variant-numeric: tabular-nums;
+}

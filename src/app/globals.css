@@ -1,26 +1,39 @@
 @import "tailwindcss";
 
 :root {
+  color-scheme: light;
   --background: #ffffff;
-  --foreground: #171717;
+  --surface: #f7f5ed;
+  --surface-muted: #e8e5db;
+  --foreground: #191919;
+  --shadow: #1919191f;
+  --plaid-line: #1919197a;
+  --plaid-band: #1919191d;
+  --plaid-stripe: #19191952;
+  --navigation-band-height: 2rem;
+  --font-body: var(--font-dm-mono), "Courier New", Courier, monospace;
+  --font-display: var(--font-fraunces), Georgia, "Times New Roman", serif;
 }
 
 @theme inline {
   --color-background: var(--background);
+  --color-surface: var(--surface);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --color-shadow: var(--shadow);
+  --font-sans: var(--font-body);
+  --font-mono: var(--font-body);
+  --text-wordmark: clamp(1.875rem, 1.5rem + 2vw, 2.125rem);
 }
 
 body {
-  background: var(--background);
+  background-color: var(--surface);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+}
+
+body,
+button,
+input,
+select,
+textarea {
+  font-family: var(--font-body);
 }

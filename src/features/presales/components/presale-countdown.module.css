@@ -1,0 +1,32 @@
+.countdown {
+  white-space: nowrap;
+}
+
+.unitLabel {
+  font-size: 0.75rem;
+  line-height: 1.5;
+}
+
+.units {
+  display: flex;
+  gap: clamp(0.75rem, 3vw, 1.25rem);
+}
+
+.unit {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: baseline;
+  gap: 0.1875rem;
+}
+
+.value {
+  font-size: 1.5rem;
+  font-weight: 500;
+  font-variant-numeric: tabular-nums;
+  line-height: 1;
+}
+
+.note {
+  font-size: 0.75rem;
+  line-height: 1.5;
+}
